@@ -1,0 +1,354 @@
+/* General Body and Dashboard Container */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Modern, clean font */
+    background-color: #1a1a1a; /* Deep black background for the body */
+    color: #e0e0e0; /* Light grey text for contrast */
+}
+
+.lecturer-dashboard-container { /* Specific class for Lecturer Dashboard */
+    background-color: #333333; /* Slightly lighter black for this dashboard card */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Pronounced shadow for depth */
+    padding: 40px;
+    max-width: 1000px; /* Adjusted max width */
+    margin: 40px auto; /* Center the dashboard */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Headings */
+.lecturer-dashboard-container h1 {
+    font-size: 2.8em;
+    color: #007bff; /* Bright blue for main title */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 123, 255, 0.3); /* Subtle blue text shadow */
+}
+
+.lecturer-dashboard-container h2 {
+    font-size: 2em;
+    color: #4da6ff; /* Lighter blue for section titles */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #4a4a4a; /* Dark grey underline */
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Status Messages */
+.message { /* Generic class for message and error */
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.message.success {
+    background-color: #28a74520; /* Green with transparency */
+    color: #28a745; /* Green text */
+    border-color: #28a745;
+}
+
+.message.error {
+    background-color: #dc354520; /* Red with transparency */
+    color: #dc3545; /* Red text */
+    border-color: #dc3545;
+}
+
+.loading-message {
+    color: #007bff; /* Blue for loading */
+    font-style: italic;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Form Styling (Add/Edit Course) */
+.course-form { /* Class for the course form */
+    background-color: #3a3a3a; /* Dark grey for form background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.form-input, /* Inputs in forms */
+.form-textarea { /* Textareas in forms */
+    background-color: #4a4a4a; /* Darker input fields */
+    color: #e0e0e0;
+    padding: 12px;
+    border: 1px solid #5a5a5a;
+    border-radius: 6px;
+    font-size: 1em;
+    width: calc(100% - 24px); /* Account for padding */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.table-input:focus, /* Also include table inputs here */
+.table-textarea:focus { /* Also include table textareas here */
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Buttons - General Styling */
+.lecturer-dashboard-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    color: white; /* Default white text for all custom-styled buttons */
+    margin-top: 10px; /* Add some margin for spacing */
+}
+
+/* Specific Button Colors */
+/* Add Course Button: Green */
+.add-course-button {
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.add-course-button:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Save Button (for editing): Green */
+.save-button {
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+.save-button:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+
+/* Edit Button: Blue */
+.edit-button {
+    background-color: #007bff; /* Blue */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.edit-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Delete Button: Red */
+.delete-button {
+    background-color: #dc3545; /* Red */
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+}
+.delete-button:hover:not(:disabled) {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Cancel Button: Blue */
+.cancel-button {
+    background-color: #007bff; /* Blue */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.cancel-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:disabled {
+    background-color: #555; /* Grey for disabled state */
+    color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Tables */
+.data-table { /* Class for the data table */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #3a3a3a; /* Dark grey for table background */
+    border-radius: 8px;
+    overflow: hidden; /* For rounded corners on table */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #4a4a4a; /* Darker border lines */
+    color: #e0e0e0;
+}
+
+.data-table th {
+    background-color: #004080; /* Dark blue for table headers */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #333333; /* Slightly different shade for even rows */
+}
+
+.data-table tr:hover {
+    background-color: #444444; /* Darker on hover */
+}
+
+.data-table td button {
+    margin-right: 8px;
+    padding: 6px 12px; /* Smaller padding for table buttons */
+    font-size: 0.85em;
+    margin-top: 5px; /* Add small margin top for vertical spacing */
+    margin-bottom: 5px;
+}
+
+.table-input, /* Inputs within tables */
+.table-textarea { /* Textareas within tables */
+    background-color: #555;
+    color: #e0e0e0;
+    border: 1px solid #666;
+    padding: 5px;
+    border-radius: 4px;
+    width: calc(100% - 10px); /* Adjust width for padding */
+    box-sizing: border-box;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .lecturer-dashboard-container {
+        padding: 30px;
+        margin: 20px auto;
+        gap: 25px;
+    }
+
+    .lecturer-dashboard-container h1 {
+        font-size: 2.2em;
+    }
+
+    .lecturer-dashboard-container h2 {
+        font-size: 1.7em;
+    }
+
+    .lecturer-dashboard-container h3 {
+        font-size: 1.4em;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .lecturer-dashboard-container {
+        padding: 20px;
+        margin: 15px;
+        gap: 20px;
+    }
+
+    .lecturer-dashboard-container h1 {
+        font-size: 1.8em;
+    }
+
+    .lecturer-dashboard-container h2 {
+        font-size: 1.4em;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .data-table td button {
+        padding: 5px 8px;
+        font-size: 0.75em;
+        margin-right: 5px; /* Adjust margin for smaller buttons */
+    }
+
+    /* Ensure tables are scrollable on small screens */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevent wrapping inside cells */
+    }
+    .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+        display: block;
+    }
+    .data-table th {
+        text-align: right;
+    }
+    .data-table td {
+        border-bottom: 1px solid #4a4a4a;
+        position: relative;
+        padding-left: 50%; /* Space for the label */
+    }
+    .data-table td:before {
+        content: attr(data-label); /* Use data-label for content */
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #8cc4ff; /* Blue label text */
+    }
+    /* Hide the original header for responsive tables */
+    .data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .lecturer-dashboard-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .lecturer-dashboard-container h1 {
+        font-size: 1.6em;
+    }
+    .lecturer-dashboard-container h2 {
+        font-size: 1.2em;
+    }
+
+    .data-table td:before {
+        width: 40%;
+    }
+}

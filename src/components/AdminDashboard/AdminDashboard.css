@@ -1,0 +1,503 @@
+/* General Body and Dashboard Container */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Modern, clean font */
+    background-color: #1a1a1a; /* Deep black background for the body */
+    color: #e0e0e0; /* Light grey text for contrast */
+}
+
+.dashboard-container {
+    background-color: #2c2c2c; /* Slightly lighter black for the main content area */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Pronounced shadow for depth */
+    padding: 40px;
+    max-width: 1200px; /* Wider for more content */
+    margin: 40px auto; /* Center the dashboard */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Headings */
+.dashboard-container h1 {
+    font-size: 2.8em;
+    color: #007bff; /* Bright blue for main title */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 123, 255, 0.3); /* Subtle blue text shadow */
+}
+
+.dashboard-container h2 {
+    font-size: 2em;
+    color: #4da6ff; /* Lighter blue for section titles */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #3a3a3a; /* Dark grey underline */
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.dashboard-container h3 {
+    font-size: 1.6em;
+    color: #8cc4ff; /* Even lighter blue for sub-sections */
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Status Messages */
+.message { /* Generic class for message and error */
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.message.success {
+    background-color: #28a74520; /* Green with transparency */
+    color: #28a745; /* Green text */
+    border-color: #28a745;
+}
+
+.message.error {
+    background-color: #dc354520; /* Red with transparency */
+    color: #dc3545; /* Red text */
+    border-color: #dc3545;
+}
+
+.loading-message {
+    color: #007bff; /* Blue for loading */
+    font-style: italic;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Tab Navigation */
+.tab-navigation { /* Changed selector from generic div to class */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px; /* Space between buttons */
+}
+
+.tab-navigation button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #3a3a3a; /* Dark grey for inactive tabs */
+    color: #e0e0e0; /* Light text on dark tabs */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab-navigation button.active {
+    background-color: #007bff; /* Active tab is blue */
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-navigation button:hover:not(.active) {
+    background-color: #4a4a4a; /* Slightly lighter grey on hover */
+    transform: translateY(-1px);
+}
+
+/* Form Styling (Add/Edit Module) */
+.module-form { /* Changed selector to class */
+    background-color: #3a3a3a; /* Dark grey for form background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.form-input, /* Added classes for inputs */
+.form-textarea {
+    background-color: #4a4a4a; /* Darker input fields */
+    color: #e0e0e0;
+    padding: 12px;
+    border: 1px solid #5a5a5a;
+    border-radius: 6px;
+    font-size: 1em;
+    width: calc(100% - 24px); /* Account for padding */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.table-input:focus, /* Also include table inputs here */
+.table-textarea:focus { /* Also include table textareas here */
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-checkbox-label { /* Added class for checkbox label */
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.form-checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Slightly larger checkbox */
+    accent-color: #007bff; /* Blue checkbox fill */
+}
+
+/* Buttons - General Styling (White & Green as per request) */
+.dashboard-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    color: white; /* Default white text for all custom-styled buttons */
+    margin-top: 10px; /* Add some margin for spacing */
+}
+
+/* Specific Button Colors */
+/* Add Module Button (form submit) */
+.module-form button[type="submit"] {
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.module-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+
+/* Table Buttons */
+/* Save (Update Module) & Activate User: Green */
+button.promote-button, /* Promote/Demote is now blue */
+button.edit-button,
+button.cancel-button,
+button.unpublish-button,
+button.assign-button { /* General blue actions */
+    background-color: #007bff; /* Blue */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button.promote-button:hover:not(:disabled),
+button.edit-button:hover:not(:disabled),
+button.cancel-button:hover:not(:disabled),
+button.unpublish-button:hover:not(:disabled),
+button.assign-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Save Module Button (Specific green) */
+button.save-button { /* New class for save button */
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+button.save-button:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+
+/* Publish Button: Green */
+button.publish-button {
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+button.publish-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Unpublish Button: Darker Blue/Grey */
+button.unpublish-button {
+    background-color: #6c757d; /* Grey/Dark blue */
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.2);
+}
+button.unpublish-button:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* Activate User Button: Green */
+button.activate-button {
+    background-color: #28a745; /* Green */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+button.activate-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Disable User Button: Blue */
+button.disable-button {
+    background-color: #007bff; /* Blue */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+button.disable-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Assign Instructor Button: GREEN */
+button.assign-instructor-button { /* New specific class for green */
+    background-color: #28a745; /* GREEN */
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+button.assign-instructor-button:hover:not(:disabled) {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+
+/* Delete Button: Red */
+button.delete-button {
+    background-color: #dc3545; /* Red */
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+}
+
+button.delete-button:hover:not(:disabled) {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.3);
+}
+
+
+button:disabled {
+    background-color: #555; /* Grey for disabled state */
+    color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Tables */
+.data-table { /* Changed selector to class */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #3a3a3a; /* Dark grey for table background */
+    border-radius: 8px;
+    overflow: hidden; /* For rounded corners on table */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #4a4a4a; /* Darker border lines */
+    color: #e0e0e0;
+}
+
+.data-table th {
+    background-color: #004080; /* Dark blue for table headers */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #333333; /* Slightly different shade for even rows */
+}
+
+.data-table tr:hover {
+    background-color: #444444; /* Darker on hover */
+}
+
+.data-table td button {
+    margin-right: 8px;
+    padding: 6px 12px; /* Smaller padding for table buttons */
+    font-size: 0.85em;
+    margin-top: 5px; /* Add small margin top for vertical spacing */
+    margin-bottom: 5px;
+}
+
+.table-input, /* Added classes for table inputs */
+.table-textarea {
+    background-color: #555;
+    color: #e0e0e0;
+    border: 1px solid #666;
+    padding: 5px;
+    border-radius: 4px;
+    width: calc(100% - 10px); /* Adjust width for padding */
+    box-sizing: border-box;
+}
+
+/* Admin Account Tag */
+.user-role-admin-tag {
+    color: #888; /* Grey for admin tag */
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Section specific styling */
+.module-management-section,
+.user-management-section,
+.reports-section {
+    background-color: #2c2c2c; /* Consistent dark background for sections */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-title { /* Added class for report section titles */
+    margin-top: 20px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        padding: 30px;
+        margin: 20px auto;
+        gap: 25px;
+    }
+
+    .dashboard-container h1 {
+        font-size: 2.2em;
+    }
+
+    .dashboard-container h2 {
+        font-size: 1.7em;
+    }
+
+    .dashboard-container h3 {
+        font-size: 1.4em;
+    }
+
+    .tab-navigation button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px;
+        margin: 15px;
+        gap: 20px;
+    }
+
+    .dashboard-container h1 {
+        font-size: 1.8em;
+    }
+
+    .dashboard-container h2 {
+        font-size: 1.4em;
+    }
+
+    .dashboard-container h3 {
+        font-size: 1.2em;
+    }
+
+    /* Stack tab buttons vertically */
+    .tab-navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tab-navigation button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .data-table td button {
+        padding: 5px 8px;
+        font-size: 0.75em;
+        margin-right: 5px; /* Adjust margin for smaller buttons */
+    }
+
+    /* Ensure tables are scrollable on small screens */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevent wrapping inside cells */
+    }
+    .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+        display: block;
+    }
+    .data-table th {
+        text-align: right;
+    }
+    .data-table td {
+        border-bottom: 1px solid #4a4a4a;
+        position: relative;
+        padding-left: 50%; /* Space for the label */
+    }
+    .data-table td:before {
+        content: attr(data-label); /* Use data-label for content */
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #8cc4ff;
+    }
+    /* Hide the original header for responsive tables */
+    .data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .dashboard-container h1 {
+        font-size: 1.6em;
+    }
+    .dashboard-container h2 {
+        font-size: 1.2em;
+    }
+    .dashboard-container h3 {
+        font-size: 1.0em;
+    }
+
+    .data-table td:before {
+        width: 40%;
+    }
+}

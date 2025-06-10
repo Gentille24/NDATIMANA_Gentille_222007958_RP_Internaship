@@ -1,0 +1,289 @@
+*
+{
+    font-family: century gothic;
+}
+.wrapper
+{
+    position: relative;
+    width: 420px;
+    height: 450px;
+    
+    display: flex;
+    align-items: center;
+    transition:2s ease;
+}
+.form-box.login
+{
+    border-style: hidden;
+    border-width: 1px;
+    border-radius: 20px;
+    background-color: transparent;
+    overflow: hidden;
+    transition:2s ease;
+    backdrop-filter: blur(20px);
+    box-shadow:0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75),0 0 0 1px rgb(52, 105, 75);
+}
+.form-box.register
+{
+   background-color: transparent;
+   padding-top: 2px;
+   border-radius: 20px;
+   overflow: hidden;
+   transition:2s ease;
+   backdrop-filter: blur(20px);
+   box-shadow:0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75),0 0 0 1px rgb(52, 105, 75);
+}
+.form-box.reset
+{
+    background-color: transparent;
+   border-radius: 20px;
+   overflow: hidden;
+   transition:2s ease;
+   backdrop-filter: blur(20px); 
+   box-shadow:0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75), 0 0 0 1px rgb(52, 105, 75),0 0 0 1px rgb(52, 105, 75);
+}
+.form-box:hover
+{
+box-shadow:0 0 0 3px rgb(52, 105, 75), 0 0 0 3px rgb(52, 105, 75), 0 0 0 2px rgb(52, 105, 75),0 0 0 3px rgb(52, 105, 75);
+}
+.wrapper .form-box
+{
+    width: 100%;
+    padding: 40px;
+    transition:2s ease;
+}
+.form-box.login
+{
+    border-radius: 20px;
+    border-style: line;
+    border-width: 2px;
+    transition:2s ease;
+}
+.wrapper.active .form-box.login
+{
+    transition: none;
+    translate: -400px;
+    transition:2s ease;
+}
+
+form h1
+{
+    font-size: 36px;
+    text-align: center;
+}
+form .input-box
+{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin: 30px 0;
+}
+.input-box input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent; 
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.388);
+    border-radius: 30px; 
+    outline: none;  
+    color: #f1eaea;
+    font-size: 17px;
+    font-weight: 900;
+    padding: 20px 60px 20px 20px;
+} 
+.input-box input::placeholder
+{
+    color: #fff;
+}
+.input-box .icon
+{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -35%;
+    font-size: 30px;
+}
+form .remember-forgot
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top:15px;
+    padding: 20px;
+}
+.remember-forgot label input
+{
+    accent-color: white;
+    margin-right: 4px;
+}
+.remember-forgot a
+{
+    color: white;
+    text-decoration: none;
+}
+.remember-forgot a:hover
+{
+
+    transition: .4s ease-in;
+    font-size: 20px;
+    cursor: pointer;
+    color: #93d3e9;
+}
+form button
+{
+    width: 100%;
+    height: 45px;
+    background: rgb(243, 237, 237);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.388);
+    transition: .3s ease-in;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+form button:hover
+{
+    cursor: pointer;
+    transition: .5s ease-in;
+    background:  rgb(52, 105, 75);
+    color: white;
+    box-shadow: 0 0 10px white;
+}
+.contA
+{
+    width: 20%;
+    background: none;
+}
+.contB
+{
+    width: 20%;
+}
+.contC
+{
+    width: 20%;
+}
+.role-selection
+{
+    display: flex;
+    padding-left: 30px;
+    margin: 20px;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 10px; /* Adjust the value to set the desired space between buttons */
+    margin-bottom: 15px; /* Adds space below the button group */
+}
+form .register-link
+{
+font-size: 18px;
+text-align: center;
+}
+.register-link p a 
+{
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+.register-link p a:hover
+{
+    cursor: pointer;
+    color: #93d3e9;
+    transition: .4s ease-in;
+}
+.role-selection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Adjust as needed */
+  left: 50%;
+  margin-left: -50px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.role-selection button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.role-selection button.active {
+  color: #007bff;
+}
+.role-selection {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.role-selection .contA,
+.role-selection .contB,
+.role-selection .contC 
+{
+  position: relative;
+}
+
+/* Tooltip styles */
+.role-selection .contA::after,
+.role-selection .contB::after,
+.role-selection .contC::after {
+  content: '';
+  position: absolute;
+ bottom: 10px;
+  left: 70%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+
+.role-selection .contA:hover::after {
+  content: 'Register as Learner';
+  opacity: 1;
+}
+
+.role-selection .contB:hover::after {
+  content: 'Register as Lecturer';
+  opacity: 1;
+}
+
+.role-selection .contC:hover::after {
+  content: 'Register as Administrator';
+  opacity: 1;
+}
